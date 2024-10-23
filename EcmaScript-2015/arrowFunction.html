@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrowFunction</title>
+</head>
+<body>
+    <script>
+        // teste sem arrowFunction
+        const fun1 = function(n) {
+            if(n % 2 === 0 ) {
+                return 'O número é par' 
+            } else {
+                return 'O número é impar'
+            }
+        }
+        console.log(fun1(2))
+
+        // teste com arrowFunction
+
+        const fun2 = (num) => {
+            if (num % 2 === 0){
+                return 'Par'
+            } else {
+                return 'Impar'
+            }
+        }
+        console.log(fun2(3))
+
+        // teste arrowFunction removendo implicito de return e ()
+        const fun3 = n => "Teste"
+        console.log(fun3())
+
+        // idem
+        const fun4 = (a, b) => a + b
+        console.log(fun4(2, 7))
+    </script>
+</body>
+</html>
