@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator</title>
+</head>
+<body>
+    <button onclick="consultar()" id="buttn"> Começar </button>
+    <p id="resultados"></p>
+    <p id="respostaPiada"></p>
+
+    Resposta: <input id="res" type="text">
+
+    <script>
+        function* conversar(){
+            let opcao = yield document.getElementById('resultados').innerHTML = 'Olá, tudo bem?'
+            
+            if(opcao === 'sim') {
+                let responda = yield document.getElementById('resultados').innerHTML = 'Fico feliz! Quer uma piada?'
+                if (responda === 'sim') {
+                    fetch('dados/piadas.json')
+                        .then(response => response.json())
+                        .then(piadas => {
+                            let idx = Math.floor((Math.random() * piadas.length))
+                            let piada = piadas[idx]
+
+                            document.getElementById('resultados').innerHTML = piada.pergunta
+                            setTimeout(() => {
+                                document.getElementById('respostaPiada').innerHTML = piada.resposta
+                            }, 4000)
+                        })
+                } else {
+                    yield document.getElementById('resultados').innerHTML = 'Sem problemas!'
+
+                }
+
+            } else {
+                yield document.getElementById('resultados').innerHTML = 'Vai ficar tudo bem!'
+            }
+
+            setTimeout(() => {
+                return 'Atendimento finalizado'
+            }, 8000)
+
+        }
+
+        let conversa = conversar();
+
+        function consultar() {
+            let resposta = document.getElementById("res").value
+
+            let iteracao = conversa.next(resposta)
+            console.log(iteracao)
+
+            // if(iteracao.done){
+            //     document.getElementById('res').style.display = 'none'
+            //     document.getElementById('resultados').style.display = 'none'
+            //     document.getElementById('respostaPiada').style.display = 'none'
+            //     document.getElementById('buttn').style.display = 'none'
+            // }
+        }
+    </script>
+</body>
+</html>

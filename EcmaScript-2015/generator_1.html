@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator</title>
+</head>
+<body>
+    <script>
+        function* generator(){
+            yield 'Teste1'
+            yield 'Teste2'
+            yield 'Teste4'
+
+            return 'teste5'
+        }
+
+        let meuGenerator = generator();
+
+        console.log(meuGenerator.next()) // O retorno terá Done: False, porque ainda não finalizou os yield
+        console.log('---------')
+        console.log(meuGenerator.next());
+        console.log('---------')
+        console.log(meuGenerator.next());
+        console.log('---------')
+        console.log(meuGenerator.next()); // o retorne terá Done: true porque finalizou os yield
+
+    </script>
+</body>
+</html>
