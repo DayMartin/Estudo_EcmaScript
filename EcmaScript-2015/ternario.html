@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ternario</title>
+</head>
+<body>
+
+    <h6>Adivinhe o número que estou pensando...</h6>
+    <p> Digite o número abaixo</p>
+    <input id="campo" type="text">
+    <p id="resposta"></p>
+    <button onclick="adivinhar()">Enviar</button>
+    <script>
+
+        // Ternario
+        const tern = n => n % 2 === 0 ? 'Par' : 'Impar' 
+        console.log(tern(4))
+
+        const adivinhar = () => {
+            const ns = document.getElementById('campo').value;
+            const resposta = tern2(ns)
+            document.getElementById('resposta').innerHTML = resposta
+        }
+
+        const tern2 = a => a == 20 ? "Acertou" : 'Errou'
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ternario 2</title>
+</head>
+<body>
+    <h6>Adivinhe o número que estou pensando entre 0 a 30</h6>
+    <h6>Digite um número abaixo</h6>
+
+    <input id="entrada" type="number">
+    <button onclick="consultar()" >Consultar</button>
+    <p id="saida"></p>
+
+    <script> 
+        const consultar = () => {
+            const entrd = document.getElementById('entrada').value
+            const resposta = ternario(entrd);
+            document.getElementById('saida').innerHTML = resposta
+        }
+
+        const ternario = n => n == 20 ? 'Acertou' : 'Errou'
+    </script>
+</body>
+</html>
