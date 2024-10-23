@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+    <script>
+        class Pessoa{
+            constructor() {
+                this.name = 'Dinah',
+                this.idade = 27
+            }
+            saudacao(){
+                console.log(`Olá, ${this.name}`)
+            }
+        }
+
+        // Construir uma instancia
+        let pessoa = new Pessoa;
+        pessoa.saudacao();
+        console.log(pessoa.idade);
+
+    </script>
+</body>
+</html>

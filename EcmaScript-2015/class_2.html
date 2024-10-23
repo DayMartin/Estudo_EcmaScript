@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Extends</title>
+</head>
+<body>
+    <script>
+        class Pessoa{
+            constructor(name, idade) {
+                this.name = name,
+                this.idade = idade
+            }
+            saudacao(){
+                console.log(`Olá, ${this.name}`)
+            }
+        }
+
+        class Aluno extends Pessoa{
+            constructor(){
+                super('Dinah', 27)
+                this.notas = {t1: 9, t2: 8, p1: 5, p2: 9}
+            }
+
+            mediaPonderada(){
+                let m = this.notas.t1 * 2;
+                
+                m += this.notas.t2 * 2;
+                m += this.notas.p1 * 3;
+                m += this.notas.p2 * 3;
+                m = m /10
+
+                return m
+            }
+        }
+
+        // Construir uma instancia
+        let aluno1 = new Aluno()
+        console.log(aluno1.mediaPonderada())
+        aluno1.saudacao()
+    </script>
+</body>
+</html>
