@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises 2 </title>
+</head>
+<body>
+
+    <script>
+        //Status 
+        // Pending, Fullfilled
+        // Rejected
+
+        let promessa = new Promise((resolve, reject) => {
+
+            setTimeout(() => {
+                dados = {
+                    0: {
+                        nome: 'Dinah', idade: 27
+                    }, 
+                    1: {
+                        nome: 'Giovana', idade: 22
+                    }
+                }
+
+                resolve(dados)
+            }, 4000)
+
+            if(false){
+                dados = {
+                    dd: 'Erro', Erro: 'Deu erro'
+                }
+                reject(dados)
+            }
+        }).then(dados2 => {
+            console.log('dados', dados2)
+
+            return 'Passando dados para o próximo then'
+        }).then(recuperando => {
+            console.log('recuperando', recuperando)
+
+            return 'Eu sou um then, porque o catch não está sendo usado'
+        }).catch(e => {
+            console.log('erro', e)
+
+            return 'Eu sou um catch'
+        }).then(() => {
+            let NovaPromessa = new Promise((resolve, reject) => {
+                if(true){
+                    dadosErro = {
+                        codigo: 1, 
+                        Erro: 'Impossível recuperar os posts'
+                    }
+
+                    reject(dadosErro);
+                }
+
+                setTimeout(() => {
+                    Posts = {
+                        0: {
+                            id: 1, id_user: 1, post: [
+                                {
+                                    descricao: 'Post1',
+                                    data: '24-04'
+                                }
+                            ]
+                        },
+                        1: {
+                            id: 2, id_user: 2, post: [
+                                {
+                                    descricao: 'Post2',
+                                    data: '24-04'
+                                }
+                            ]
+                        }
+                    }
+
+                    resolve(Posts)
+                }, 5000)
+            }).then(result => {
+            console.log(result)
+            }).catch(erro => {
+                console.log(erro)
+            })
+        })
+        
+    </script>
+</body>
+</html>

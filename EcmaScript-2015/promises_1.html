@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises 1</title>
+</head>
+<body>
+
+    <script>
+        //Status 
+        // Pending, Fullfilled
+        // Rejected
+
+        let promessa = new Promise((resolve, reject) => {
+            try {
+                //Forçar o erro
+                //throw new Error('Um erro ')
+
+                setTimeout(() => {
+                    resolve('Concluido')
+                }, 2000)
+
+            } catch (e) {
+                reject(e)
+            }
+        })
+
+        console.log(promessa)
+        setTimeout(() => {
+            console.log(promessa)
+        }, 5000)
+
+        
+    </script>
+</body>
+</html>
