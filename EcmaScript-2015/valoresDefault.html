@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h6>Vamos contar um história, digite abaixo os dados solicitados: </h6>
+
+    <label>Digite o nome de um animal: </label>
+    <input id="animal" type="text">
+
+    <label>Digite o nome do dono do animal</label>
+    <input id="dono" type="text">
+
+    <label> Digite a atividade favorita do animal</label>
+    <input id="atividade" type="text">
+
+    <button onclick="entrada()"> Enviar dados </button>
+
+    <p id="saida"></p>
+    <p id="saida2"></p>
+
+    <script>
+        const entrada = () => {
+            const nomeAnimal = document.getElementById("animal").value
+            const dono = document.getElementById('dono').value
+            const atividade = document.getElementById('atividade').value
+
+            const resposta = enviar(nomeAnimal, dono, atividade)
+            const respostaDefault = enviar()
+            // se chamar a função sem passar os parametros, ela vai pegar os valores default
+
+            document.getElementById('saida').innerHTML = resposta
+            document.getElementById('saida2').innerHTML = respostaDefault
+
+        }
+
+        const enviar = (animal = 'Pandora', dono = 'GI', atividade = 'Jogar') => {
+            return `Era uma vez um animal chamado ${animal}, seu dono se chamava ${dono}, e eles adoravam ${atividade}, juntos! Fim`
+        }
+
+    </script>
+</body>
+</html>
