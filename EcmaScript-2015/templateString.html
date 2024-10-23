@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+<body>
+
+    <p> O conceito de template string é simples inserir `` para escrever algo e ${} para receber o valor da variavel</p>
+
+    <h6> Adivinhe o número que estou pensando...</h6>
+    <h6> Digite um número </h6>
+
+    <input id="entrada" type="number"> 
+    <button onclick="consultar()"> Enviar </button>
+
+    <p id="saida"></p>
+    <script>
+        const consultar = () => {
+            const numero = document.getElementById('entrada').value
+            const resposta = pensamento(numero);
+
+            document.getElementById('saida').innerHTML = resposta
+        }
+
+        const pensamento = n => n == 20 ? `Acertou, o número é ${n}` : "Errou"
+
+        const test1 = 20
+        const test2 = 'Vinte'
+        const test3 = `Eu tenho ${test1} de idade, é sério ${test2} anos!`
+
+        console.log(test3)
+    </script>
+    
+</body>
+</html>
