@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador Rest</title>
+</head>
+<body>
+    <script>
+        const soma = (...s) => {
+
+            resultado = 0;
+            s.forEach(s => {
+                resultado += s
+            })
+
+            return resultado;
+        }
+
+        const result = soma(2, 2, 8)
+        console.log(`Resultado da soma ${result}`)
+
+        const mult = (m, ...resto) => {
+            resultado = 0;
+
+            resto.forEach(v => {
+                multiplicacao = m * v
+                resultado += multiplicacao
+                console.log(`Multiplicação de ${m} com ${v} é ${multiplicacao}`)
+            })
+
+            return resultado
+        }
+
+        const valorTotal = mult(2, 7, 8, 6 )
+        console.log(`A soma das multiplicações é ${valorTotal}`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operador Spread</title>
+</head>
+<body>
+    <p>Expandir strings</p>
+    
+    <script>
+
+        // STRING
+        let frase = 'Testando o operador no contexto spread'
+
+        console.log(frase);
+        console.log(...frase)
+
+        // Se eu colocar essa string expandida dentro de um array, cada posição tomara uma posição do array
+        let frase2 = [...frase]
+        console.log(frase2)
+
+        // Se colocar em um objeto, cada expansão se tornará um item do objeto
+        let objt = {...frase};
+        console.log(objt)
+
+        // ARRAY
+            // Array
+        let arr1 = ['NodeJS', 'Javascript']
+        let arr2 = ['Python', 'Panda']
+        let arr3 = [...arr1, ...arr2]
+        let arr4 = ['MongoDB', 'MySQL', ...arr1, ...arr2]
+        console.log(arr3)
+        console.log(arr4)
+
+            // Objeto
+        let obj1 = { nome: 'Dinah', idade: 27}
+        let obj2 = { profissao: 'Dev', statusCivil: 'Casada' }
+        let obj3 = {...obj1, ...obj2, ...arr4}
+        console.log(obj3)
+    </script>
+</body>
+</html>
