@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring assignment parte 3 - Funções</title>
+</head>
+<body>
+    <script>
+        // Desestruturando arrays em funçoes
+        arr = [20, 30, 40, 60]
+        const test = ([, , c]) => {
+            console.log(c)
+        }
+        test(arr)
+
+        // Default Arrays
+        arr2 = [20, 50]
+        const test2 = ([,,h = 100]) => {
+            console.log(h)
+        }
+
+        test2(arr2)
+
+        // OBJETOS
+        const obj = {
+            a: 100,
+            b: 400,
+            c: 99
+        }
+
+        const test3 = ({c}) => {
+            console.log(c)
+        }
+        test3(obj)
+
+        // Apelidando OBjetos
+        const test4 = ({c: J}) => {
+            console.log(J)
+        }
+        test4(obj)
+
+        // Default Objeto
+        const test5 = ({c, T = 200}) => {
+            console.log(T)
+        }
+        test5(obj)
+
+    </script>
+</body>
+</html>

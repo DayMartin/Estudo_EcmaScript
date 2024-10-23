@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring assignment parte 1 ARRAYS</title>
+</head>
+<body>
+    <script>
+        var frutas = ['abacaxi', 'uva', 'maca']
+        // frutas.push('banana')
+        console.log(frutas)
+        var [a, , c, d = 'banana2'] = frutas;
+        console.log('teste', a, c, d)
+
+        // MultiDimensional
+        var coisas = [['Bolacha', 'Paçoca'], ['Javascript', 'Python']]
+
+        var [, x] = coisas; // Aqui pegamos todo o array da 2º dimensão
+        console.log('Toda a segunda dimensão', x)
+
+        var [,[g]]= coisas;
+        console.log('0º posição da segunda dimensão', g)
+
+        var [,[,h]] = coisas;
+        console.log('1º posição da seguda dimensão', h)
+
+        // 3 Dimensões
+        var nomes = [['Dinah', 'Giovana'],['Lorena', 'Jhenni'],['Arthur', 'Gabriel', 'Drika']]
+
+        var [, , l] = nomes;
+        console.log('Toda a 3º dimensão', l)
+
+        var [,,[,p]] = nomes;
+        console.log('1º posição da 3º dimensão', p)
+    </script>
+</body>
+</html>

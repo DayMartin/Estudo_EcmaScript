@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring assignment parte 4 - Utilizando o REST em conjunto </title>
+</head>
+<body>
+    <script>
+        // Array
+        let arr = [50, 30,210 ,300];
+        let [a, ...resto1] = arr
+        console.log(a, resto1)
+
+        // Objetos
+        let obj = {a: 'Dinah', b: 'Giovana', c: 'Gabriel'}
+        let {c, ...resto2} = obj
+        console.log(c, resto2)
+    </script>
+</body>
+</html>

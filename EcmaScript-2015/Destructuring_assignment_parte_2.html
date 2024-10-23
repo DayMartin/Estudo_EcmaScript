@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring assignment parte 2 OBJECT</title>
+</head>
+<body>
+    <script>
+        var pessoa = {
+            nome: 'Dinah',
+            profissao: 'Dev', 
+            statusCivil: 'Casada',
+            tecnologias: {
+                backend: 'Javascript', 
+                front: 'Angular',
+                banco: 'MySQL'
+            }
+        }
+
+        var {nome} = pessoa;
+        console.log(nome)
+
+        // renomeando 
+        var {nome: n} = pessoa;
+        console.log(n)
+
+        // valores default
+        var {nome, sobrenome = 'Martins', parente: p = 'Varios'} = pessoa;
+        console.log(sobrenome, p)
+
+        // desestruturando atributos de objetos
+        var { tecnologias: { backend, front}, profissao } = pessoa;
+        console.log(backend, front, profissao)
+
+        // renomeando desestruturação de atributos
+        var {tecnologias: {backend: b, front: f}} = pessoa;
+        console.log(b,f)
+
+        // default
+        var { tecnologias: { nuvem: n = 'AWS'}} = pessoa;
+        console.log(n)
+
+    </script>
+</body>
+</html>
