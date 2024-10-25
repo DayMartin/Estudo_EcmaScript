@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Async Await</title>
+</head>
+<body>
+    <script>
+        let processo1 = new Promise((resolve, reject) => {
+            setTimeout(() => resolve('Resolvido'), 4000)
+        })
+
+        async function recuperarDados() {
+            await processo1.then(p => console.log(p))
+
+            console.log('Primeiro processo 1')
+
+            await fetch('https://jsonplaceholder.typicode.com/comments')
+                .then(converter => converter.json())
+                .then(dados => console.log('Comments', dados))
+
+            console.log('Segundo processo 2')
+
+            await fetch('https://jsonplaceholder.typicode.com/posts')
+                .then(r => r.json())
+                .then(d => console.log('Posts', d))
+
+            console.log('Terceiro processo 3')
+
+            return 'Fim'
+
+        }
+
+        // Ao incluir o async await em uma função, ela automaticamente se torna uma PROMISE
+        // Desta forma, após a utilizção dela, podemms utilizar os then e catch
+        recuperarDados().then(d => console.log(d))
+    </script>
+</body>
+</html>
