@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.getOwnPropertyDescriptors</title>
+</head>
+<body>
+
+    <script>
+        let objt = {
+            nome: "Dinah", 
+            estudo: {
+                estudo1: 'Javascript',
+                estudo2: 'Python'
+            },
+            gostos: [
+                {id: 1, gosto: 'Minha esposa'},
+                {id: 1, gosto: 'Minha familia'}
+            ]
+        }
+        // Descritores de propriedades
+        console.log(Object.getOwnPropertyDescriptors(objt))
+
+        // Descritor Writable: O valor da propriedade não poderá ser modificado
+        Object.defineProperty(objt, 'nome', {
+            value: 'Doria',
+            writable: false
+        })
+        console.log(Object.getOwnPropertyDescriptors(objt))
+
+        // Descritor Enumerable: quando false a propriedade não é exibida em laços de repetição
+        for(let propriedade in objt) {
+            console.log(propriedade, objt[propriedade])
+        }
+
+        // Definindo propriedade enumerable como false
+        Object.defineProperty(objt, 'estudo', {
+            enumerable: false
+        })
+
+        console.log('-------------------------------------------------------')
+
+        for(let propriedade in objt) {
+            console.log(propriedade, objt[propriedade])
+        }
+        console.log(Object.getOwnPropertyDescriptors(objt))
+
+        // Descritor Configurable :quando false indica que a propriedade não pode ser deletada e não podemos mais modificar os descritores, exceto writable para false
+
+        Object.defineProperty(objt, 'nome', {
+            configurable: false
+        })
+
+        console.log('-------------------------------------------------------')
+        console.log(Object.getOwnPropertyDescriptors(objt))
+
+
+    </script>
+    
+</body>
+</html>
