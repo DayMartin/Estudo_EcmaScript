@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object.entries</title>
+</head>
+<body>
+
+    <script>
+        // O Object.entries pega a chave:valor e converte em array
+        // colocando a chave e valor em um array com indice
+        // No geral, a chave vira o indice 0 do array e o valor o indice subsequente
+        let obj = {
+            name: 'Dinah',
+            study: {
+                linguagem: 'Javascript',
+                idioma: 'Inglês'
+            },
+            gostos: [
+                {id: 1, gosto: 'Falar'},
+                {id: 2, gosto: 'Falar com a minha esposa'}
+
+            ]
+        }
+
+        // Array normal
+        console.log(Object.values(obj))
+
+        // Array com as chaves
+        console.log(Object.entries(obj))
+
+    </script>
+    
+</body>
+</html>
