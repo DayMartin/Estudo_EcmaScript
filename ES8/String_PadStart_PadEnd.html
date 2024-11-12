@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  String padStart e padEnd </title>
+</head>
+<body>
+    <script>
+        // PadStar preenchimento à esquerda
+        let codigo = '1000';
+        let codigo2 = '1000';
+
+        codigo = codigo.padStart(10, '0')
+        console.log(codigo);
+
+        codigo2 = codigo2.padStart(10, '-')
+        console.log(codigo2);
+
+
+        // PadEnd preenchimento à direito
+        let codigo3 = '2000';
+        codigo3 = codigo3.padEnd(12, '+')
+        console.log(codigo3);
+
+    </script>
+</body>
+</html>
