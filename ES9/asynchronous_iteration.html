@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous iteration</title>
+</head>
+<body>
+    <script>
+        // Utilizada para criar laços de repetição dentro de async/await
+        let arr = [1, 2, 3, 4]
+
+        const funcaoAsinc = async () => {
+
+            for (item of arr) {
+
+                await new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        console.log('Consultando iteração')
+                        resolve()
+                    }, 2000)
+                })
+
+                console.log(item)
+            }
+        }
+
+        funcaoAsinc();
+
+    </script>
+</body>
+</html>
