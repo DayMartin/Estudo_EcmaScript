@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Finally</title>
+</head>
+<body>
+    <script>
+        // O Finally pode ser usado em ambas as situação da promisse de resolve ou reject
+        // O Finally não recebe um parâmetro
+        // É possível adicionar vários outros then após o finally
+
+        let promessa = new Promise((resolve, reject) => {
+
+            if(true){
+                reject('Rejeitado')
+            }
+
+            resolve('Resolvido')
+
+        }).then((resultado) => {
+            console.log(resultado)
+        }).catch((rejeitado) => {
+            console.log(rejeitado)
+        }).finally(() => {
+            console.log('Finalizado')
+        }).then(() => {
+            console.log('Incluido then após o finally')
+        })
+
+
+    </script>
+</body>
+</html>
