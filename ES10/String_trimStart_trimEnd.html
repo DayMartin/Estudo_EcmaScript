@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String trimStart (trimLeft), trimEnd (trimRight)</title>
+</head>
+<body>
+    <script>
+        // Utilizamos estes métodos RETORNAR uma string com a remoção de espaços na esquerda e direita das strings
+        // Esses métodos RETORNAM isto, eles não alteram a string original.
+        // Veja só, se tiver uma string antes do espaço, ele não vai remover, porque ele só remove o espaço antes de qualquer string INICIAL
+
+        let strng = '           Espaços a esquerda?'
+        console.log('!!' + strng)
+
+        // Tratando o espaço 
+        let strngTradata1 = strng.trimStart();
+        console.log('!!' + strngTradata1.trimStart())
+
+        let strng2 = 'Espaços a direita?         '
+        console.log(strng2 + '**');
+        
+        let strngTradata2 = strng2.trimEnd();
+        console.log(strngTradata2 + '**')
+
+        //Também podemos utilizar os 2 métodos juntos
+        let strng3 = '           Espaços por todo lado?          '
+        console.log('!!' + strng3 + '**')
+
+        let strngTradata3 = strng3.trimStart().trimEnd();
+        console.log(strngTradata3)
+
+        // Podemos utilizar os mesmos métodos mas com seus APELIDOS trimLeft e trimRight
+        let strngTradata4 = strng3.trimLeft().trimRight();
+        console.log(strngTradata4)
+
+    </script>
+</body>
+</html>

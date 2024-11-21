@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array flatmap</title>
+</head>
+<body>
+    <script>
+        // Método que percorre cada um dos itens do array com o map, e depois eleva os itens para nível 1
+        /*
+        No array abaixo, todos os nomes estão em seus respectivos indíces, porém temos apenas 0,1,2 indiceis, 
+        cada linha de nome, faz parte de um indice, porém estão todos juntos.
+        No método abaixo iremos utilizar o map como exemplo, para pegar cara item e separar por virgula
+        */
+        let nomes = [
+            'Dinah,Giovana,Gabriel',
+            'Jhenni,Lorena,Rodrigo',
+            'Drika,arthur,ricardo'
+        ]
+        console.log(nomes)
+
+        let nomesMap = nomes.map(item => {
+            return item.split(',')
+        })
+
+        // Agora veja que cada nome se tornou um subItem do indice de array, temos 1 nível a mais para cada indice.
+        console.log(nomesMap)
+
+        // Mas podemos utilizar o método flatmap, para realizar o map e ainda elevar os nomes para o nível 1, e cada nome vai ter seu proprio indice
+        let nomesFlatMap = nomes.flatMap(item => {
+            return item.split(',')
+        });
+        console.log(nomesFlatMap);
+
+    
+
+    </script>
+</body>
+</html>

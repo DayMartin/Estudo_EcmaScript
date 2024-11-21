@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Flat</title>
+</head>
+<body>
+    
+    <script>
+        // O Array Flat eleva níveis de arrays para níveis superiores
+        // De uma forma mais básica, se você tiver 2 níveis de arrays, você pode acoplar o nível 2 com o nível 1
+        // Se tiver mais níveis, eles irã subir 1+
+
+        let arr1 = [1,2,3,4, [5,6,7]]
+        console.log(arr1, 'Array 1 com 2 níveis');
+
+        let arr2 = arr1.flat();
+        console.log(arr2, 'Array 2 com os 2 níveis acoplados, transformando em apenas 1 nível')
+
+        // Agora podemos incluir a quantidade de nível que queremos subir
+        // Veja que no array abaixo temos 4 níveis ( o 0(zero) aqui também conta, então na teoria são 3 níveis, 0,1,2,3)
+        let arr4 = [1,2,3,4, [5,6,7, [8,9, [10, 11]]]]
+        let arr5 = arr4.flat(2)
+        console.log(arr5)
+    </script>
+</body>
+</html>

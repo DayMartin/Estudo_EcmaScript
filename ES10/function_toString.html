@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function toString</title>
+</head>
+<body>
+
+    <script>
+
+        // o método tostring, é utilizado para retornar o tipo de um objeto
+        class Carro {
+            constructor(ano, marca){
+                this.ano = ano,
+                this.marca = marca
+            }
+        }
+
+        // instancia
+        let carrinho = new Carro('Volkswagen', '2025');
+        console.log(carrinho.toString());
+
+        // Então, o toString irá retornar [object Object], pois é um objeto do tipo Object.
+        // Podemos subscrever o método toString, passando para ele um string mais personalizada
+
+        class Pessoa {
+            constructor(nome, idade){
+                this.nome = nome,
+                this.idade = idade
+            }
+
+            toString() {
+                return `Objeto do tipo Pessoa com o nome: ${this.nome} e idade: ${this.idade}`
+            }
+        }
+
+        // Agora podemos retornar o valor de toString() Personalizável
+        let pessoianha = new Pessoa('Dinah', 27)
+        console.log(pessoianha.toString())
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch com parâmetro opcional</title>
+</head>
+<body>
+    <script>
+
+        // BEFORE
+
+        try {
+            throw 'Erro sendo passado como parametro para o catch obrigatóriamente'
+        } catch(e) {
+            console.log(e)
+        }
+
+        // AFTER
+
+        try {
+            throw 'Erro'
+        } catch {
+            console.log('Não precisamos mais de um parametro')
+        }
+
+    </script>
+</body>
+</html>
